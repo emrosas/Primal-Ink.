@@ -18,5 +18,6 @@
         <img src="/images/rosa.png" alt="Sección Rosa" class="w-full border-solid border-dark border-2">
     </div>
     
+    <div></div>
 
 </section>``
