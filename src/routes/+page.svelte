@@ -1,3 +1,14 @@
+<script>
+
+    import Service from "../lib/service.svelte"
+
+    let services = [
+        {name: 'Branding', text: 'We will build a complete Branding MASTERPIECE to garantee your brands success'},
+        {name: 'Web Design', text: 'Cool Web Design text will go here'},
+        {name: 'Social Media', text: 'Cool Social Media text will go here'},
+    ];
+
+</script>
 
 <!--Hero Section-->
 
@@ -28,6 +39,12 @@
         <h1 class="font-title font-extrabold text-3xl leading-normal mb-10">We are a multidisciplinary Design Studio</h1>
         <p class="font-body text-lg leading-relaxed mb-4">We specialize in the creation and optimization of <b class="text-pink font-medium">Brand Identities</b> and <b class="text-pink font-medium">User Experiences</b>.</p>
         <p class="font-body text-lg leading-loose">We aim to <b class="text-pink font-medium">Help Brands</b> tell creative stories and expand  through <b class="text-pink font-medium">Unique Design Solutions</b>.</p>
+    </div>
+
+    <div class="px-5vw flex flex-col gap-4">
+    {#each services as service (service.name)}
+        <Service service={service} />   
+    {/each}
     </div>
 
 </section>
