@@ -4,12 +4,12 @@ import { each } from "svelte/internal";
 
 
     let projects = [
-        {name: 'La Postreria 77', color: 'bg-pink'},
-        {name: 'Enchiladas Inc.', color: 'bg-buzz'},
-        {name: 'Doblerre', color: 'bg-green'},
-        {name: 'LPainters', color: 'bg-orange'},
+        {name: 'La Postreria 77', color: 'bg-pink', description: 'Here goes a cool description of how we helped La Postreria 77.'},
+        {name: 'Enchiladas Inc.', color: 'bg-buzz', description: 'Here goes a cool description of how we helped Enchiladas Inc.'},
+        {name: 'Doblerre', color: 'bg-green', description: 'Here goes a cool description of how we helped Doblerre.'},
+        {name: 'Tacos Rasta', color: 'bg-yellow', description: 'Here goes a cool description of how we helped Tacos Rasta.'},
+        {name: 'LPainters', color: 'bg-orange', description: 'Here goes a cool description of how we helped LPainters.'},
     ];
-
 
     let serviceIndex = 0
 
@@ -30,17 +30,29 @@ import { each } from "svelte/internal";
 
 </script>
 
-<section class="bg-dark border-dark border-b-2 px-5vw py-20">
+<section class="bg-dark border-dark border-b-2">
 
     {#each projects as project, i (project.name)}
         {#if i == serviceIndex}
-        <h1 class="text-light font-title">{project.name}</h1>
-        <div class="{project.color} w-32 h-20 mb-6"></div>
+        <div>
+            <div class="{project.color} w-full h-[50vh]"></div>
+            <div class="flex">
+                <div class="text-light p-6 w-3/4">
+                    <h3 class="font-title text-lg mb-1">{project.name}</h3>
+                    <p class="font-body text-sm mb-8">{project.description}</p>
+                    <a href="{project.url}" class="font-title bg-light text-dark border-dark border-2 px-2 shadow-brutal hover:bg-buzz transition-colors">Visit Profile</a>
+                </div>
+                <div class="bg-light flex w-1/4">
+                    <button on:click={subServiceIndex} class="p-2 font-title bg-white border-dark border-2 shadow-brutal hover:shadow-hovered transition-shadow">Previous Project </button>
+                    <button on:click={addServiceIndex} class="p-2 font-title bg-white border-dark border-2 shadow-brutal hover:shadow-hovered transition-shadow">Next Project</button>
+                </div>
+            </div>
+        </div>
         {/if}
     {/each}
-
-    <button on:click={addServiceIndex} class="font-title bg-light p-2">Next Name</button>
-    <button on:click={subServiceIndex} class="font-title bg-light p-2">Previous Name</button>
+    
+    
+   
         
     
 
