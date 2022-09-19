@@ -16,7 +16,10 @@
 
 <Projects />
 
-<Contact />
+<div id="contact">
+    <Contact />
+</div>
+
 
 </div>
 
